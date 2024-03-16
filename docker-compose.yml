@@ -16,3 +16,8 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - postgres
+    # network_mode: "host"
+    volumes:
+      - type: bind
+        source: .
+        target: /usr/app

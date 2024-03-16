@@ -36,10 +36,7 @@ RUN pip install dbt-postgres==1.8.0b1
 
 
 # Set docker basics
-WORKDIR /usr/app/dbt/
-
-# Copy the dbt project directory into the container
-COPY . .
+WORKDIR /usr/app/
 
 CMD ["dbt", "build"]
 # ENTRYPOINT bash

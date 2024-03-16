@@ -1,2 +1,2 @@
 build:
-	rm logs/dbt.log; docker-compose up --build dbt
+	rm -f logs/dbt.log; docker-compose up --build dbt
