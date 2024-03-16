@@ -1,0 +1,13 @@
+tinkerer:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      port: 5432
+      user: my_user
+      password: my_password
+      dbname: my_db
+      schema: public
+      threads: 1
+      keepalives_idle: 0
