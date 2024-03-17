@@ -1,5 +1,4 @@
 build:
-	# export UID="$(id -u $(whoami))"
-	# export GID="$(id -g $(whoami))"
+	bash build.sh
 	rm -f logs/dbt.log
 	docker-compose up --force-recreate --build dbt
