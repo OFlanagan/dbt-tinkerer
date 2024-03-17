@@ -1,0 +1,20 @@
+unit_tests:
+  - name: is_2_years_working
+    description: "check if my is_2_years column is working"
+    model: model
+    given:
+      - input: ref('employees')
+        rows:
+          - {employee_id: 1, first_name: John, last_name: Doe, department_id: 1}
+          - {employee_id: 2, first_name: John, last_name: Smith, department_id: 1}
+          - {employee_id: 3, first_name: John, last_name: Smith, department_id: 1}
+      - input: ref('employee_dates')
+        rows:
+          - {employee_id: 1, start_date: 2021-03-02, end_date: 9999-01-01} # note that this will depend on current time according to DB, can we mock this out?
+          - {employee_id: 2, start_date: 2021-03-02, end_date: 2021-03-03}
+          - {employee_id: 3, start_date: 2021-03-02, end_date: 2024-03-03}
+    expect:
+      rows:
+        - {employee_id: 1, over_2_years: true}
+        - {employee_id: 2, over_2_years: false}
+        - {employee_id: 3, over_2_years: true}
