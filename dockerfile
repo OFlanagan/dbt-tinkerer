@@ -37,6 +37,5 @@ RUN pip install dbt-postgres==1.8.0b1
 
 # Set docker basics
 WORKDIR /usr/app/
-
-CMD ["dbt", "build"]
+CMD ["bash", "run.sh"]
 # ENTRYPOINT bash

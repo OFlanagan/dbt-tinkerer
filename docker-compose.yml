@@ -17,6 +17,12 @@ services:
     depends_on:
       - postgres
     # network_mode: "host"
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        # mode: host
+    user: "${UID}:${GID}"
     volumes:
       - type: bind
         source: .
